@@ -1,0 +1,2 @@
+# HomePageNewProductsPlugin
+A simple plugin
