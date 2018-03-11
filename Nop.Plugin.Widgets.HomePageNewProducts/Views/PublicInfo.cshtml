@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ProductsListingViewModel>
+@{
+    Layout = "";
+    Html.AddCssFileParts("~/Plugins/Widgets.HomePageNewProducts/Content/styles.css");
+}
+
+<div class="product-grid home-page-product-grid">
+    <div class="title">
+        <strong>@T(LocalConstants.LatestProductsLacaleKey)</strong>
+    </div>
+
+    <div class="item-grid">
+        @foreach (var product in Model)
+        {
+            var imageAltText = string.Format(T("Media.Product.ImageAlternateTextFormat").Text, product.Name);
+            var imageTitleText = string.Format(T("Media.Product.ImageLinkTitleFormat").Text, product.Name);
+
+            <div class="item-box">
+                <div class="product-item" data-productid=@product.Id>
+                    <div class="picture">
+                        <a href=@Url.RouteUrl("Product", new { SeName = product.SeName })>
+                            <img alt="@(imageAltText)" src="@product.PictureUrl" title="@(imageTitleText)">
+                        </a>
+                    </div>
+                    <div class="details">
+                        <h2 class="product-title">
+                            <a href=@Url.RouteUrl("Product", new { SeName = product.SeName })>@product.Name</a>
+                        </h2>
+                        <div class="add-info">
+                            <div class="prices">
+                                <span class="price actual-price">@product.Price</span>
+                            </div>
+                            <div class="dates">
+                                <span>@string.Format(T(LocalConstants.AddedOnLocaleKey).Text, product.CreatedOn)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

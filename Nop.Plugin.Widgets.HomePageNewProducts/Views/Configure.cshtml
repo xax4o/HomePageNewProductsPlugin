@@ -1,0 +1,42 @@
+﻿@model ConfigurationModel
+
+@{
+    Layout = "_ConfigurePlugin";
+}
+
+@await Component.InvokeAsync("StoreScopeConfiguration")
+
+<form asp-controller="WidgetsHomePageNewProducts" asp-action="Configure" method="post">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-label asp-for="SelectedHomePageZone" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-select asp-for="SelectedHomePageZone" asp-items="Model.HomePageZones" />
+                        <span asp-validation-for="SelectedHomePageZone"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <nop-label asp-for="ProductsCount" />
+                    </div>
+                    <div class="col-md-9">
+                        <nop-editor asp-for="ProductsCount" />
+                        <span asp-validation-for="ProductsCount"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-9">
+                        <input type="submit" name="save" class="btn bg-blue" value="@T("Admin.Common.Save")" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

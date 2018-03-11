@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "Latest Products On Home Page",
+  "SystemName": "Widgets.HomePageNewProducts",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.10" ],
+  "Author": "DN",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.HomePageNewProducts.dll",
+  "Description": "This plugin allows you to show new products on start page."
+}
