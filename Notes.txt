@@ -1,0 +1,14 @@
+For the products on home page I use some of the html and css from Featured products (to reuse the styling).
+
+Some Issues:
+1. I know that there will be some problems with the localization strings. 
+2. I saw the logic for the adding to cart, rent and so on buttons (it's not very simple). 
+	That's why I removed them.
+	I can add them to, if it's necessary, but it will be some copy and pasting from ProductsFactory (why copy and pasting - because ProductsFactory and the models for it are in the main web project and reference it is a bad idea).
+3. For the price it's the same as the buttons. There is a price but not with Discounts and so on.
+
+If you see the plugin today Monday (12.03) and write back things you want to be done (from the above issues or any other) I'll try to do what I can after work (I don't promise much).
+Well that's it. Hope you like the Plugin :).
+
+
+
